@@ -3,189 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jinming Wang | Computer Science Researcher</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --light-bg: #f8f9fa;
-            --transition: all 0.3s ease;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: var(--primary-color);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 4rem 0;
-            margin-bottom: 2rem;
-        }
-
-        .header-content {
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-link {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .contact-link:hover {
-            color: #2980b9;
-        }
-
-        section {
-            margin: 3rem 0;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: var(--accent-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .timeline-item {
-            display: flex;
-            justify-content: space-between;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background-color: var(--light-bg);
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-        }
-
-        .research-interests {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .interest-card {
-            padding: 1.5rem;
-            background-color: var(--light-bg);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .interest-card i {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .timeline-item {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <title>Your Name - AI Researcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <h1>Jinming Wang</h1>
-            <p>PhD Candidate in Computer Science</p>
-            <p><a href="mailto:jw1294@exeter.ac.uk" class="contact-link">jw1294@exeter.ac.uk</a></p>
+    <!-- 容器 #1 顶部区域 -->
+    <header class="header-container">
+        <h1 class="name">Jinming Wang</h1>
+        <p class="tagline">Researcher in Deep Learning and Urban Computing</p>
+        <div class="contact-links">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="jw1294@exeter.ac.uk" zIndex="2" class="email-link">jw1294@exeter.ac.uk</a>
+            <i class="fa-brands fa-square-github"></i>
+            <a href="https://github.com/JinmingWang" zIndex="2" class="github-link">GitHub</a>
         </div>
     </header>
 
-    <main class="container">
-        <section>
-            <h2>About Me</h2>
-            <p>I am a Computer Science PhD candidate at the University of Exeter specializing in deep learning and urban computing. My research focuses on integrating generative AI with spatio-temporal data analysis to solve complex urban challenges.</p>
-        </section>
+    <div class="divider"></div>
 
-        <section>
-            <h2>Research Interests</h2>
-            <div class="research-interests">
-                <div class="interest-card">
-                    <i class="fas fa-robot"></i>
-                    <h3>Generative Methods</h3>
-                    <p>VAEs, GANs, and diffusion models for data synthesis</p>
-                </div>
-                <div class="interest-card">
-                    <i class="fas fa-city"></i>
-                    <h3>Urban Computing</h3>
-                    <p>Trajectory processing and smart city applications</p>
-                </div>
-                <div class="interest-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Spatio-temporal Data</h3>
-                    <p>Analyzing dynamic urban systems</p>
-                </div>
-                <div class="interest-card">
-                    <i class="fas fa-eye"></i>
-                    <h3>Computer Vision</h3>
-                    <p>Image segmentation and scene understanding</p>
-                </div>
+    <!-- 容器 #2 神经网络区域 -->
+    <main class="network-container" id="networkContainer">
+        <canvas id="connectionCanvas" zIndex="-2"></canvas> <!-- 用于绘制连接线 -->
+        <div class="layers-container" id="layersContainer"></div>
+        
+        <!-- 内容展示层 -->
+        <div class="content-overlay" id="contentOverlay">
+            <div class="content-card">
+                <h2 id="contentTitle"></h2>
+                <p id="contentBody"></p>
             </div>
-        </section>
-
-        <section>
-            <h2>Academic Background</h2>
-            <div class="timeline-item">
-                <div>
-                    <h3>PhD in Computer Science</h3>
-                    <p>University of Exeter</p>
-                </div>
-                <p>2023–Present</p>
-            </div>
-
-            <div class="timeline-item">
-                <div>
-                    <h3>MSc Advanced Computer Science</h3>
-                    <p>University of Exeter (Distinction)</p>
-                </div>
-                <p>2022–2023</p>
-            </div>
-
-            <div class="timeline-item">
-                <div>
-                    <h3>BSc Computer Science</h3>
-                    <p>University of Alberta (82%)</p>
-                </div>
-                <p>2017–2021</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Professional Experience</h2>
-            <div class="timeline-item">
-                <div>
-                    <h3>Computer Vision Engineer</h3>
-                    <p>Beijing Kanbig Technology Corp, Ltd</p>
-                </div>
-                <p>2021–2023</p>
-            </div>
-        </section>
+        </div>
     </main>
+
+    <div class="tooltip" id="tooltip"></div>
+    <script src="script.js"></script>
+    <!-- https://gitcode.com/gh_mirrors/ca/canvas-nest.js?utm_source=highlight_word_gitcode&word=canvas-nest.js -->
+    <script color="255,255,255" opacity="1" count="100" zIndex="0", src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
