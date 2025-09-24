@@ -37,15 +37,10 @@ const contentData = {
     },
     "Research Interests": {
         "Deep Learning": "I have experience on building and training various deep learning architectures including CNNs, RNNs, and Transformers. I am familiar with different Neural Network Layers, their principles and functions. PyTorch is my main framework.",
-
         "Generative Methods": "VAEs, GANs, and diffusion models are very popular models in recent years. Especially diffusion models are widely used in image generation and text-to-image generation. I am interested in their applications in urban computing, such as spatio-temporal data synthesis.",
-
         "Urban Computing": "Urban computing is a multidisciplinary field that focuses on the study of urban environments through the lens of data science and computer science. I am interested in how to use data-driven methods to solve urban problems, especially those related to trajectory data, road networks, and dispatching systems.",
-
         "Spatio-Temporal Data": "Spatio-temporal data refers to data that has both spatial and temporal components. I am interested in how to use deep learning methods to figure out the hidden relations between spatial and temporal features, or sometimes merge them together.",
-
         "Computer Vision": "I have experience in various computer vision tasks in real-world industries, such as object detection with YOLOv5, image segmentation with U-Net and DeepLab, image generation with CycleGAN, pose estimation with OpenPose and AlphaPose, pose classification with SEResNet. I also have experience on deploying these models using NVIDIA TensorRT and DeepStream.",
-
         "Reinforcement Learning": "Really fun to learn how to train an agent to make decisions in a dynamic environment. RL is pretty useful (and is becoming more and more popular) in many fields, such as robotics, order dispatching, or even LLMs recently. Most importantly, they can be used in games, imagine you can train an agent to play games like Terraria (And you can never win against it)."
     },
     "Academic Background": {
@@ -54,7 +49,7 @@ const contentData = {
         "PhD": "PhD in Computer Science from University of Exeter, UK, 2023 - Present",
     },
     "Projects and Publications": {
-        "Road Network Generation": "<a href=\"https://doi.org/10.24963/ijcai.2025/702\" target=\"_blank\">https://doi.org/10.24963/ijcai.2025/702</a> Road networks are the vein of modern cities. Yet, maintaining up-to-date and accurate road network information is a persistent challenge, especially in areas with rapid urban changes or limited surveying resources. Crowdsourced trajectories, e.g., from GPS records collected by mobile devices and vehicles, have emerged as a powerful data source for continuously mapping the urban areas. However, the inherent noise, irregular and often sparse sampling rates, and the vast variability in movement patterns make the problem of road network generation from trajectories a non-trivial task. Existing methods often approach this from an appearance-based perspective: they typically render trajectories as 2D density maps and then employ heuristic algorithms to extract road networks - leading to inevitable information loss and thus poor performance especially when trajectories are sparse or ambiguities present, e.g. flyovers. In this paper, we propose a novel approach, called GraphWalker, to generate high-fidelity road network graphs from raw trajectories in an end-to-end manner. We achieve this by designing a bespoke latent diffusion transformer T2W-DiT, which treats input trajectories as generation conditions, and gradually denoises samples from a latent space to obtain the corresponding walks on the underlying road network graph - then assemble them together as the final road network. Extensive experiments on multiple datasets demonstrate the proposed GraphWalker can effectively generate high quality road networks from noisy and sparse trajectories, showcasing significant improvements over state-of-the-art.",
+        "Road Network Generation": "<a href=\"https://doi.org/10.24963/ijcai.2025/702\" target=\"_blank\">https://doi.org/10.24963/ijcai.2025/702</a> Road networks are the vein of modern cities...",
         "Project B": "TODO"
     },
     "Career": {
@@ -65,9 +60,7 @@ const contentData = {
 
 // 字体大小配置
 const fontSizeData = {
-    "About Me": {
-        "Who Am I": "18px"
-    },
+    "About Me": { "Who Am I": "18px" },
     "Research Interests": {
         "Deep Learning": "16px",
         "Generative Methods": "16px",
@@ -93,11 +86,11 @@ const fontSizeData = {
 
 // 配置层图标
 const layerIcons = [
-    'fas fa-user-astronaut',       // About Me
-    'fas fa-brain',                // Research
-    'fas fa-graduation-cap',       // Academic
-    'fas fa-book-open',            // Publications
-    'fas fa-briefcase'             // Career
+    'fas fa-user-astronaut',
+    'fas fa-brain',
+    'fas fa-graduation-cap',
+    'fas fa-book-open',
+    'fas fa-briefcase'
 ];
 
 // 节点图标配置
@@ -133,136 +126,104 @@ const nodeIcons = {
 
 const tooltip = document.getElementById('tooltip');
 
-let lineWidthPhase = 0; // 全局相位，用于控制线宽变化的速度
-const linePhases = []; // 存储每条线的随机初始相位
+let lineWidthPhase = 0;
+const linePhases = [];
 
-// 初始化函数
 function init() {
-    // 定义并初始化 canvas 和 ctx
     const canvas = document.getElementById('connectionCanvas');
     const ctx = canvas.getContext('2d');
     const layersContainer = document.getElementById('layersContainer');
-    layersContainer.innerHTML = ''; // 清空容器
+    layersContainer.innerHTML = '';
 
     layersConfig.forEach((layer, layerIndex) => {
         const layerWrapper = document.createElement('div');
         layerWrapper.className = 'layer-wrapper';
         layerWrapper.style.width = `${100 / layersConfig.length}%`;
         
-        // 创建标题元素
         const title = document.createElement('div');
         title.className = 'layer-title';
         title.innerHTML = `<i class="${layerIcons[layerIndex]}"></i><br>${layersDisplayTitle[layer.title]}`;
-        
-        // 先添加标题到容器
         layerWrapper.appendChild(title);
 
-        // 创建节点容器
         const layerDiv = document.createElement('div');
         layerDiv.className = 'neural-layer';
         
-        // 创建节点
         for (let i = 0; i < layer.nodes; i++) {
             const node = document.createElement('div');
             node.className = 'neural-node';
             node.innerHTML = `<i class="${nodeIcons[layer.title][i]}"></i>`;
 
             if (layer.labels[i]) {
-                // 鼠标移入时显示 tooltip
                 node.addEventListener('mouseenter', (e) => {
-                    tooltip.textContent = layer.labels[i]; // 设置 tooltip 内容
+                    tooltip.textContent = layer.labels[i];
                     tooltip.style.display = 'block';
+                    tooltip.classList.add('show');
                 });
-                
-                // 鼠标移动时更新 tooltip 位置
                 node.addEventListener('mousemove', (e) => {
                     tooltip.style.left = `${e.pageX + 10}px`;
                     tooltip.style.top = `${e.pageY - tooltip.offsetHeight - 10}px`;
                 });
-                
-                node.addEventListener('mouseenter', (e) => {
-                    tooltip.textContent = layer.labels[i]; // 设置 tooltip 内容
-                    tooltip.style.display = 'block';
-                    tooltip.classList.add('show');
-                });
-                
                 node.addEventListener('mouseleave', () => {
                     tooltip.style.display = 'none';
                     tooltip.classList.remove('show');
                 });
-                
                 node.addEventListener('click', (e) => {
                     e.stopPropagation();
                     showContent(layerIndex, i);
                 });
             }
 
-            // 设置节点z-index
-            node.style.zIndex = 2; // 确保节点在其层的上方
-            
+            node.style.zIndex = 2;
             layerDiv.appendChild(node);
         }
 
-        layerDiv.style.zIndex = 1; // 确保层在标题下方
-        
-        // 添加节点容器到 wrapper
+        layerDiv.style.zIndex = 1;
         layerWrapper.appendChild(layerDiv);
-
         layerWrapper.style.zIndex = 1;
-
         layersContainer.appendChild(layerWrapper);
     });
 
-    // 画布自适应
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight * 0.7;
         drawConnections();
     }
 
-    // 绘制连接线
     function drawConnections() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
         
-        const canvasRect = canvas.getBoundingClientRect(); // 获取 canvas 的位置
+        const canvasRect = canvas.getBoundingClientRect();
         const layers = document.getElementsByClassName('neural-layer');
 
-        // 初始化线的相位数组（只在第一次调用时执行）
         if (linePhases.length === 0) {
             for (let i = 0; i < layers.length - 1; i++) {
                 const currentLayer = layers[i].children;
                 const nextLayer = layers[i + 1].children;
-
                 Array.from(currentLayer).forEach(() => {
                     Array.from(nextLayer).forEach(() => {
-                        linePhases.push(Math.random() * Math.PI * 2); // 随机初始相位
+                        linePhases.push(Math.random() * Math.PI * 2);
                     });
                 });
             }
         }
 
-        let phaseIndex = 0; // 用于遍历线的相位数组
-
+        let phaseIndex = 0;
         for (let i = 0; i < layers.length - 1; i++) {
             const currentLayer = layers[i].children;
             const nextLayer = layers[i + 1].children;
-            
             Array.from(currentLayer).forEach(node1 => {
                 Array.from(nextLayer).forEach(node2 => {
                     const rect1 = node1.getBoundingClientRect();
                     const rect2 = node2.getBoundingClientRect();
-                    
-                    // 修正坐标相对于 canvas
                     const x1 = rect1.left + rect1.width / 2 - canvasRect.left;
                     const y1 = rect1.top + rect1.height / 2 - canvasRect.top;
                     const x2 = rect2.left + rect2.width / 2 - canvasRect.left;
                     const y2 = rect2.top + rect2.height / 2 - canvasRect.top;
 
-                    // 动态计算线宽
-                    const baseLineWidth = 1; // 基础线宽
-                    const maxLineWidth = 5; // 最大线宽
-                    const phase = lineWidthPhase + linePhases[phaseIndex]; // 当前线的相位
+                    const baseLineWidth = 1;
+                    const maxLineWidth = 5;
+                    const phase = lineWidthPhase + linePhases[phaseIndex];
                     const lineWidth = baseLineWidth + (maxLineWidth - baseLineWidth) * (Math.sin(phase) + 1) / 2;
                     ctx.lineWidth = lineWidth;
                     
@@ -271,42 +232,27 @@ function init() {
                     ctx.lineTo(x2, y2);
                     ctx.stroke();
 
-                    phaseIndex++; // 更新相位索引
+                    phaseIndex++;
                 });
             });
         }
 
-        // 更新全局相位并请求下一帧
-        lineWidthPhase = (lineWidthPhase + 0.005) % (Math.PI * 200); // 控制线宽变化的速度同时防止数值过大
+        lineWidthPhase = (lineWidthPhase + 0.005) % (Math.PI * 200);
         requestAnimationFrame(drawConnections);
     }
 
-    // 初始化和窗口监听
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
     
-    // 设置内容卡片事件监听器
     const contentOverlay = document.getElementById('contentOverlay');
-    const contentCard = document.querySelector('.content-card');
-    
-    // 点击覆盖层关闭内容，传递事件对象
-    // contentOverlay.addEventListener('click', function(e) {
-    //     closeContent(e);
-    // });
-
+    // ✅ Clean fix: only close when clicking background (not the card)
     contentOverlay.addEventListener('click', function(e) {
         if (e.target === contentOverlay) {
             closeContent();
         }
     });
-    
-    // 移除不需要的事件监听器
-    // contentCard.addEventListener('click', function(e) {
-    //     e.stopPropagation();
-    // });
 }
 
-// 重写内容显示逻辑
 let activeAnimation = null;
 
 function showContent(layerIndex, nodeIndex) {
@@ -315,7 +261,6 @@ function showContent(layerIndex, nodeIndex) {
     const nodes = layerDiv.children;
     const clickedNode = nodes[nodeIndex];
 
-    // 获取容器 #2 的中心点
     const container = document.getElementById('networkContainer');
     const containerRect = container.getBoundingClientRect();
     const centerX = containerRect.left + containerRect.width / 2;
@@ -325,30 +270,23 @@ function showContent(layerIndex, nodeIndex) {
     const nodeCenterX = nodeRect.left + nodeRect.width / 2;
     const nodeCenterY = nodeRect.top + nodeRect.height / 2;
 
-    // 计算节点相对于中心的偏移量
     const offsetX = centerX - nodeCenterX;
     const offsetY = centerY - nodeCenterY;
 
-    // 设置节点的 CSS 变量
     clickedNode.style.setProperty('--center-x', `${offsetX}px`);
     clickedNode.style.setProperty('--center-y', `${offsetY}px`);
-    
-    // 洪水动画
     clickedNode.classList.add('flood-animation');
     
-    // 动画结束显示内容
     const contentOverlay = document.getElementById('contentOverlay');
     const contentTitle = document.getElementById('contentTitle');
     const contentBody = document.getElementById('contentBody');
 
     contentOverlay.style.display = 'flex';
     
-    // 更新内容
     const node_label = layersConfig[layerIndex].labels[nodeIndex];
     contentTitle.textContent = node_label;
     contentBody.innerHTML = contentData[layerTitle][node_label];
     
-    // 应用字体大小
     const fontSize = fontSizeData[layerTitle][node_label] || "16px";
     contentBody.style.fontSize = fontSize;
 
@@ -357,14 +295,7 @@ function showContent(layerIndex, nodeIndex) {
     contentBody.classList.add('fade-in');
 }
 
-// 关闭逻辑修改
-function closeContent(event) {
-    // 如果点击的是内容卡片内部，不关闭
-    const contentCard = document.querySelector('.content-card');
-    if (event && contentCard && contentCard.contains(event.target)) {
-        return;
-    }
-
+function closeContent() {
     const contentOverlay = document.getElementById('contentOverlay');
     const contentTitle = document.getElementById('contentTitle');
     const contentBody = document.getElementById('contentBody');
@@ -383,33 +314,17 @@ function closeContent(event) {
         contentOverlay.classList.remove('fade-out');
     }, 500);
     
-    // 逆洪水动画
     document.querySelectorAll('.neural-node').forEach(node => {
         if (node.classList.contains('flood-animation')) {
             node.classList.remove('flood-animation');
             node.classList.add('reverse-flood-animation');
-
-            // 在逆动画结束后清除类
             setTimeout(() => {
                 node.classList.remove('reverse-flood-animation');
-            }, 800); // 与逆动画的持续时间一致
+            }, 800);
         }
     });
     
     clearTimeout(activeAnimation);
 }
-
-// 点击任意位置关闭
-// document.getElementById('contentOverlay').addEventListener('click', closeContent);
-
-// 阻止内容卡片的点击事件冒泡
-document.addEventListener('DOMContentLoaded', function() {
-    const contentCard = document.querySelector('.content-card');
-    if (contentCard) {
-        contentCard.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    }
-});
 
 window.onload = init;
