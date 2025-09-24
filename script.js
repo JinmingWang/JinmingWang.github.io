@@ -326,7 +326,7 @@ function showContent(layerIndex, nodeIndex) {
     // 更新内容
     const node_label = layersConfig[layerIndex].labels[nodeIndex];
     contentTitle.textContent = node_label;
-    contentBody.textContent = contentData[layerTitle][node_label];
+    contentBody.innerHTML = contentData[layerTitle][node_label];
     
     // 应用字体大小
     const fontSize = fontSizeData[layerTitle][node_label] || "16px";
