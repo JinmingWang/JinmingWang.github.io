@@ -54,12 +54,40 @@ const contentData = {
         "PhD": "PhD in Computer Science from University of Exeter, UK, 2023 - Present",
     },
     "Projects and Publications": {
-        "Road Network Generation": "<https://doi.org/10.24963/ijcai.2025/702> Road networks are the vein of modern cities. Yet, maintaining up-to-date and accurate road network information is a persistent challenge, especially in areas with rapid urban changes or limited surveying resources. Crowdsourced trajectories, e.g., from GPS records collected by mobile devices and vehicles, have emerged as a powerful data source for continuously mapping the urban areas. However, the inherent noise, irregular and often sparse sampling rates, and the vast variability in movement patterns make the problem of road network generation from trajectories a non-trivial task. Existing methods often approach this from an appearance-based perspective: they typically render trajectories as 2D density maps and then employ heuristic algorithms to extract road networks - leading to inevitable information loss and thus poor performance especially when trajectories are sparse or ambiguities present, e.g. flyovers. In this paper, we propose a novel approach, called GraphWalker, to generate high-fidelity road network graphs from raw trajectories in an end-to-end manner. We achieve this by designing a bespoke latent diffusion transformer T2W-DiT, which treats input trajectories as generation conditions, and gradually denoises samples from a latent space to obtain the corresponding walks on the underlying road network graph - then assemble them together as the final road network. Extensive experiments on multiple datasets demonstrate the proposed GraphWalker can effectively generate high quality road networks from noisy and sparse trajectories, showcasing significant improvements over state-of-the-art.",
+        "Road Network Generation": "<a href=\"https://doi.org/10.24963/ijcai.2025/702\" target=\"_blank\">https://doi.org/10.24963/ijcai.2025/702</a> Road networks are the vein of modern cities. Yet, maintaining up-to-date and accurate road network information is a persistent challenge, especially in areas with rapid urban changes or limited surveying resources. Crowdsourced trajectories, e.g., from GPS records collected by mobile devices and vehicles, have emerged as a powerful data source for continuously mapping the urban areas. However, the inherent noise, irregular and often sparse sampling rates, and the vast variability in movement patterns make the problem of road network generation from trajectories a non-trivial task. Existing methods often approach this from an appearance-based perspective: they typically render trajectories as 2D density maps and then employ heuristic algorithms to extract road networks - leading to inevitable information loss and thus poor performance especially when trajectories are sparse or ambiguities present, e.g. flyovers. In this paper, we propose a novel approach, called GraphWalker, to generate high-fidelity road network graphs from raw trajectories in an end-to-end manner. We achieve this by designing a bespoke latent diffusion transformer T2W-DiT, which treats input trajectories as generation conditions, and gradually denoises samples from a latent space to obtain the corresponding walks on the underlying road network graph - then assemble them together as the final road network. Extensive experiments on multiple datasets demonstrate the proposed GraphWalker can effectively generate high quality road networks from noisy and sparse trajectories, showcasing significant improvements over state-of-the-art.",
         "Project B": "TODO"
     },
     "Career": {
         "Computer Vision Algorithm Engineer": "Beijing Kanbig Technology Corp, Ltd, China, 2021 - 2023",
         "Post Graduate Teaching Assistant": "University of Exeter, UK, 2023 - Present",
+    }
+};
+
+// 字体大小配置
+const fontSizeData = {
+    "About Me": {
+        "Who Am I": "18px"
+    },
+    "Research Interests": {
+        "Deep Learning": "16px",
+        "Generative Methods": "16px",
+        "Urban Computing": "16px",
+        "Spatio-Temporal Data": "16px",
+        "Computer Vision": "14px",
+        "Reinforcement Learning": "16px"
+    },
+    "Academic Background": {
+        "BSc": "18px",
+        "MSc": "18px",
+        "PhD": "18px"
+    },
+    "Projects and Publications": {
+        "Road Network Generation": "12px",
+        "Project B": "18px"
+    },
+    "Career": {
+        "Computer Vision Algorithm Engineer": "16px",
+        "Post Graduate Teaching Assistant": "16px"
     }
 };
 
@@ -299,6 +327,10 @@ function showContent(layerIndex, nodeIndex) {
     const node_label = layersConfig[layerIndex].labels[nodeIndex];
     contentTitle.textContent = node_label;
     contentBody.textContent = contentData[layerTitle][node_label];
+    
+    // 应用字体大小
+    const fontSize = fontSizeData[layerTitle][node_label] || "16px";
+    contentBody.style.fontSize = fontSize;
 
     contentOverlay.classList.add('fade-in');
     contentTitle.classList.add('fade-in');
