@@ -82,7 +82,7 @@ const fontSizeData = {
         "PhD": "18px"
     },
     "Projects and Publications": {
-        "Road Network Generation": "12px",
+        "Road Network Generation": "16px",
         "Project B": "18px"
     },
     "Career": {
