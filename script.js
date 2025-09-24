@@ -245,8 +245,9 @@ function init() {
     resizeCanvas();
     
     const contentOverlay = document.getElementById('contentOverlay');
-    // ✅ Clean fix: only close when clicking background (not the card)
     contentOverlay.addEventListener('click', function(e) {
+        // print properties of e
+        console.log(e);
         // print e.target
         console.log(e.target);
         if (e.target === contentOverlay) {
