@@ -289,13 +289,15 @@ function init() {
     const contentOverlay = document.getElementById('contentOverlay');
     const contentCard = document.querySelector('.content-card');
     
-    // 点击覆盖层关闭内容
-    contentOverlay.addEventListener('click', closeContent);
-    
-    // 阻止内容卡片的点击事件冒泡
-    contentCard.addEventListener('click', function(e) {
-        e.stopPropagation();
+    // 点击覆盖层关闭内容，传递事件对象
+    contentOverlay.addEventListener('click', function(e) {
+        closeContent(e);
     });
+    
+    // 移除不需要的事件监听器
+    // contentCard.addEventListener('click', function(e) {
+    //     e.stopPropagation();
+    // });
 }
 
 // 重写内容显示逻辑
@@ -350,7 +352,13 @@ function showContent(layerIndex, nodeIndex) {
 }
 
 // 关闭逻辑修改
-function closeContent() {
+function closeContent(event) {
+    // 如果点击的是内容卡片内部，不关闭
+    const contentCard = document.querySelector('.content-card');
+    if (event && contentCard && contentCard.contains(event.target)) {
+        return;
+    }
+
     const contentOverlay = document.getElementById('contentOverlay');
     const contentTitle = document.getElementById('contentTitle');
     const contentBody = document.getElementById('contentBody');
