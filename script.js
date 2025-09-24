@@ -376,4 +376,14 @@ function closeContent() {
 // 点击任意位置关闭
 document.getElementById('contentOverlay').addEventListener('click', closeContent);
 
+// 阻止内容卡片的点击事件冒泡
+document.addEventListener('DOMContentLoaded', function() {
+    const contentCard = document.querySelector('.content-card');
+    if (contentCard) {
+        contentCard.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+});
+
 window.onload = init;
