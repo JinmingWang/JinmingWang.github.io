@@ -250,7 +250,7 @@ function init() {
         console.log(e);
         // print e.target
         console.log(e.target);
-        if (e.target === contentOverlay) {
+        if (e.target !== contentOverlay) {
             closeContent();
         }
     });
