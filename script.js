@@ -284,6 +284,18 @@ function init() {
     // 初始化和窗口监听
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
+    
+    // 设置内容卡片事件监听器
+    const contentOverlay = document.getElementById('contentOverlay');
+    const contentCard = document.querySelector('.content-card');
+    
+    // 点击覆盖层关闭内容
+    contentOverlay.addEventListener('click', closeContent);
+    
+    // 阻止内容卡片的点击事件冒泡
+    contentCard.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
 }
 
 // 重写内容显示逻辑
@@ -374,16 +386,16 @@ function closeContent() {
 }
 
 // 点击任意位置关闭
-document.getElementById('contentOverlay').addEventListener('click', closeContent);
+// document.getElementById('contentOverlay').addEventListener('click', closeContent);
 
 // 阻止内容卡片的点击事件冒泡
-document.addEventListener('DOMContentLoaded', function() {
-    const contentCard = document.querySelector('.content-card');
-    if (contentCard) {
-        contentCard.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    }
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     const contentCard = document.querySelector('.content-card');
+//     if (contentCard) {
+//         contentCard.addEventListener('click', function(e) {
+//             e.stopPropagation();
+//         });
+//     }
+// });
 
 window.onload = init;
