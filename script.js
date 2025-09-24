@@ -290,8 +290,14 @@ function init() {
     const contentCard = document.querySelector('.content-card');
     
     // 点击覆盖层关闭内容，传递事件对象
+    // contentOverlay.addEventListener('click', function(e) {
+    //     closeContent(e);
+    // });
+
     contentOverlay.addEventListener('click', function(e) {
-        closeContent(e);
+        if (e.target === contentOverlay) {
+            closeContent();
+        }
     });
     
     // 移除不需要的事件监听器
@@ -397,13 +403,13 @@ function closeContent(event) {
 // document.getElementById('contentOverlay').addEventListener('click', closeContent);
 
 // 阻止内容卡片的点击事件冒泡
-// document.addEventListener('DOMContentLoaded', function() {
-//     const contentCard = document.querySelector('.content-card');
-//     if (contentCard) {
-//         contentCard.addEventListener('click', function(e) {
-//             e.stopPropagation();
-//         });
-//     }
-// });
+document.addEventListener('DOMContentLoaded', function() {
+    const contentCard = document.querySelector('.content-card');
+    if (contentCard) {
+        contentCard.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+});
 
 window.onload = init;
