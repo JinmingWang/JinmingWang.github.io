@@ -49,7 +49,7 @@ const contentData = {
         "PhD": "PhD in Computer Science from University of Exeter, UK, 2023 - Present",
     },
     "Projects and Publications": {
-        "Road Network Generation": "<a href=\"https://doi.org/10.24963/ijcai.2025/702\" target=\"_blank\">https://doi.org/10.24963/ijcai.2025/702</a> Road networks are the vein of modern cities. Yet, maintaining up-to-date and accurate road network information is a persistent challenge, especially in areas with rapid urban changes or limited surveying resources. Crowdsourced trajectories, e.g., from GPS records collected by mobile devices and vehicles, have emerged as a powerful data source for continuously mapping the urban areas. However, the inherent noise, irregular and often sparse sampling rates, and the vast variability in movement patterns make the problem of road network generation from trajectories a non-trivial task. Existing methods often approach this from an appearance-based perspective: they typically render trajectories as 2D density maps and then employ heuristic algorithms to extract road networks - leading to inevitable information loss and thus poor performance especially when trajectories are sparse or ambiguities present, e.g. flyovers. In this paper, we propose a novel approach, called GraphWalker, to generate high-fidelity road network graphs from raw trajectories in an end-to-end manner. We achieve this by designing a bespoke latent diffusion transformer T2W-DiT, which treats input trajectories as generation conditions, and gradually denoises samples from a latent space to obtain the corresponding walks on the underlying road network graph - then assemble them together as the final road network. Extensive experiments on multiple datasets demonstrate the proposed GraphWalker can effectively generate high quality road networks from noisy and sparse trajectories, showcasing significant improvements over state-of-the-art.",
+        "Road Network Generation": "<a href=\"https://doi.org/10.24963/ijcai.2025/702\" target=\"_blank\">High-Fidelity Road Network Generation with Latent Diffusion Models (IJCAI 2025)</a> <br> Jinming Wang, Hongkai Wen, Geyong Min, Man Luo <br> Digital road networks (RN) are so important in data-driven smart city applications. Accurate construction of RNs relies on GPS trajectory data, which is often sparse and noisy. Existing trajectory-based RN generators involves multiple data-modality conversions that lead to information loss, as well as heuristic processing steps that are not robust. This work proposes GraphWalker, a novel end-to-end learnable RN generator based on latent diffusion models (LDM). GraphWalker keeps features in geographic space throughout its pipeline, and its unique end-to-end learnable design eliminates the need for heuristic processing.",
         "Project B": "TODO"
     },
     "Career": {
@@ -243,17 +243,18 @@ function init() {
 
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
-    
+
+    // const contentCard = document.getElementById('contentCard');
+    // contentCard.addEventListener('click', e => e.stopPropagation());
+
     const contentOverlay = document.getElementById('contentOverlay');
     contentOverlay.addEventListener('click', function(e) {
         // print e.target
         console.log(e.target);
-        if (e.target !== contentOverlay) {
+        if (e.target == contentOverlay) {
             closeContent();
         }
     });
-
-    document.querySelector('.content-card').addEventListener('click', e => e.stopPropagation());
 }
 
 let activeAnimation = null;

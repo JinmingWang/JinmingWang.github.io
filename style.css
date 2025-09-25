@@ -136,7 +136,7 @@ body {
     border-radius: 10px;
     max-width: 50%;
     animation: fadeIn 0.5s;
-    z-index: 10; /* 确保内容在最上层 */
+    z-index: 10;
 }
 
 @keyframes fadeIn {
@@ -211,7 +211,7 @@ body {
 .content-card {
     background: none;
     color: white;
-    pointer-events: none; /* 防止点击穿透 */
+    
 }
 
 .tooltip {
