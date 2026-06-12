@@ -1,0 +1,28 @@
+{
+  "title": {
+    "en": "About Me",
+    "zh": "自我介绍"
+  },
+  "sections": [
+    {
+      "title": {
+        "en": "Overview",
+        "zh": "概述"
+      },
+      "content": {
+        "en": "I am a Computer Science PhD candidate at the University of Exeter specializing in deep learning, AIGC, spatio-temporal data, transportation, and urban computing. My research focuses on designing multi-modal generative neural networks, integrating them with spatio-temporal / graph data analysis to solve complex urban (transportation) challenges.<br><br>I have a strong background in computer science and AI. In terms of data, I have experience working with spatio-temporal data, graphs, images, texts and multi-modal data. In terms of methods, I have expertise in deep learning, generative models (e.g., GANs, VAEs, diffusion models), reinforcement learning, computer vision, digital twin, etc.",
+        "zh": "我是一名埃克塞特大学的计算机科学博士研究生，专注于深度学习、AIGC、时空数据、交通和城市计算。我的研究重点是设计多模态生成神经网络，将它们与时空/图数据分析相结合，以解决复杂的城市（交通）挑战。<br><br>我在计算机科学和人工智能方面有着坚实的背景。在数据方面，我有处理时空数据、图、图像、文本和多模态数据的经验。在方法方面，我在深度学习、生成模型（如GANs、VAEs、扩散模型）、强化学习、计算机视觉、数字孪生等方面具有专业知识。"
+      }
+    },
+    {
+      "title": {
+        "en": "My Interests",
+        "zh": "我的兴趣"
+      },
+      "content": {
+        "en": "My research interests include deep learning, generative models, spatio-temporal data analysis, transportation and urban computing. I am particularly interested in multi-modal diffusion models and their applications in solving real-world urban challenges, such as road network generation, trajectory recovery, traffic forecasting, etc. I also love exploring more efficient and effective neural network architectures and training strategies to push the boundaries of what generative models can achieve.",
+        "zh": "我的研究兴趣包括深度学习、生成模型、时空数据分析、交通和城市计算。我尤其对多模态扩散模型及其在解决现实世界城市挑战（如道路网络生成、轨迹恢复、交通预测等）中的应用感兴趣。我也喜欢探索更高效、更强大的神经网络架构和训练策略，以推动生成模型的能力边界。"
+      }
+    }
+  ]
+}

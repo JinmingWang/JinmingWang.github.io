@@ -1,0 +1,63 @@
+{
+  "title": {
+    "en": "Demos",
+    "zh": "技术演示"
+  },
+  "sections": [
+    {
+      "title": {
+        "en": "Data Science & Machine Learning",
+        "zh": "数据科学与机器学习"
+      },
+      "explanation": {
+        "en": "Data science and machine learning are fundamental skills for any AI researcher. Modern AI systems often rely on large amounts of data, which requires various data processing techniques like data cleaning, feature engineering, data visualization, data distribution analysis, etc. Machine learning is deeply intertwined with data science, as it provides the algorithms and models to learn from data and make predictions or decisions. Compared to Deep Learning, traditional machine learning methods are often more interpretable and require less computational resources, making them suitable for smaller datasets and easier problems. Techniques such as decision trees, random forests, support vector machines, principal component analysis, clustering, etc., are widely used in various applications. This demo shows a very simple classification task.",
+        "zh": "数据科学和机器学习是 AI 研究人员的基本技能。现代 AI 系统通常依赖大量数据，这需要各种数据处理技术，如数据清洗、特征工程、数据可视化、数据分布分析等。机器学习与数据科学密不可分，因为它提供了从数据中学习并进行预测或决策的算法和模型。与深度学习相比，传统机器学习方法通常更具可解释性，并且需要较少的计算资源，使其适用于较小的数据集和更简单的问题。决策树、随机森林、支持向量机、主成分分析、聚类等技术在各种应用中得到广泛使用。这个演示展示了一个非常简单的分类任务。"
+      },
+      "demoScript": "demos/data-science-classification.js"
+    },
+    {
+      "title": {
+        "en": "Generative Artificial Intelligence",
+        "zh": "生成式人工智能"
+      },
+      "explanation": {
+        "en": "Generative AI, has revolutionized content creation. In early stages, generative models like GANs and VAEs enabled the creation of realistic images, music, and text. However, they often struggled with training stability and poor diversity (mode collapse). The advent of diffusion models has addressed these issues, offering improved training stability and the ability to generate high-quality, diverse content. Diffusion models work by gradually adding noise to clear content (forward process) and then learning to reverse this process (denoising) to generate new content. This approach has led to significant advancements in image generation, text generation, 3D model generation, and more. This demo showcases a denoising process that transforms pure noise into a clear image, illustrating the core mechanism of diffusion models.",
+        "zh": "生成式人工智能（Generative AI）已经彻底改变了内容创作领域。在早期阶段，生成模型如 GANs 和 VAEs 使得创建真实的图像、音乐和文本成为可能。然而，它们在训练稳定性和多样性（模式崩溃）方面遇到了很大阻力。扩散模型的出现解决了这些问题，它提供了更好的训练稳定性和生成高质量、多样化内容的能力。扩散模型逐渐向清晰内容添加噪声（正向过程），然后通过学习如何逆转这一过程（去噪）来生成新内容。这种方法在图像生成、文本生成、3D 模型生成等方面取得了显著进展。这个演示展示了一个去噪过程，将纯噪声转变为清晰图像，说明了扩散模型的核心机制。"
+      },
+      "demoScript": "demos/generative-ai-diffusion.js"
+    },
+    {
+      "title": {
+        "en": "Urban Computing",
+        "zh": "城市计算"
+      },
+      "explanation": {
+        "en": "Urban computing is an interdisciplinary field that combines computer science, urban planning, and transportation engineering to analyze and understand urban systems using computational techniques. By leveraging GPS trajectory data, road network graphs, and movement patterns, researchers can study human mobility, traffic flow, and urban dynamics. These insights ultimately inform the design of smarter cities, more sustainable urban environments, improved transportation systems, and more efficient logistics, etc. The demo visualizes GPS trajectory data, its corresponding graph walks and the underlying road network graph.",
+        "zh": "城市计算是一个跨学科领域，结合了计算机科学、城市规划和交通工程，使用计算技术分析和理解城市系统。通过利用 GPS 轨迹数据、道路网络图和移动模式，研究人员可以研究人类移动性、交通流量和城市动态。这些信息最终可以帮助设计更智能的城市、更可持续的城市环境、改进的交通系统和更高效的物流等。本演示可视化了定位轨迹数据、相应的图路径和底层的道路网络图。"
+      },
+      "demoScript": "demos/urban-computing.js"
+    },
+    {
+      "title": {
+        "en": "Computer Vision & Deep Learning",
+        "zh": "计算机视觉与深度学习"
+      },
+      "explanation": {
+        "en": "Computer vision enables machines to interpret and understand visual information from the world. Traditional computer vision techniques rely on handcrafted features and algorithms to analyze images and videos. Such methods include edge detection, feature extraction, corner detection, transformation, wavelet transform, color adjustment, etc. With the rise of deep learning, computer vision has experienced a significant transformation. Deep learning models (Yolo, UNet, Deeplib, Vision Transformer, etc) have achieved remarkable performance in various computer vision tasks, such as image classification, object detection, semantic segmentation, image & video generation, etc. Nowadays, diffusion models greatly enhance the capabilities of image and video generation, related products include DALL-E, Sora, SeeDance, etc. This demo demonstrates a very *inaccurate* classification task on the MNIST dataset.",
+        "zh": "计算机视觉使机器能够解释和理解来自世界的视觉信息。传统的计算机视觉技术依赖于手工设计的特征和算法来分析图像和视频。这些方法包括边缘检测、特征提取、角点检测、变换、小波变换、颜色调整等。随着深度学习的兴起，计算机视觉经历了显著的转变。深度学习模型（如 Yolo、UNet、Deeplib、Vision Transformer 等）在各种计算机视觉任务中大幅领先，如图像分类、目标检测、语义分割、图像和视频生成等。如今，扩散模型极大地增强了图像和视频生成的能力，相关产品包括 DALL-E、Sora、SeeDance 等。这个演示展示了 MNIST 数据集上的一个非常*不准确*的分类任务。"
+      },
+      "demoScript": "demos/computer-vision-mnist.js"
+    },
+    {
+      "title": {
+        "en": "Reinforcement Learning",
+        "zh": "强化学习"
+      },
+      "explanation": {
+        "en": "Reinforcement Learning (RL) is a machine learning paradigm where an agent learns to make decisions by interacting with an environment. Unlike supervised learning which relies on labeled data, RL agents learn through trial and error, receiving rewards or penalties for their actions. The goal is to learn a policy that maximizes cumulative reward over time. RL has achieved remarkable success in game playing (AlphaGo, Dota 2), robotics, autonomous driving, and resource optimization. Key algorithms include Q-Learning, SARSA, Policy Gradients, and Actor-Critic methods. This demo visualizes Q-Learning on a grid world: the agent learns to navigate from a start position to a goal while avoiding traps. Watch as the agent explores randomly at first, then gradually converges to an optimal path as Q-values (state-action values) are updated through experience.",
+        "zh": "强化学习（RL）是一种机器学习范式，智能体通过与环境交互来学习做出决策。与依赖标注数据的监督学习不同，强化学习智能体通过试错学习，根据其行为获得奖励或惩罚。目标是学习一个策略，使长期累积奖励最大化。强化学习在游戏对弈（AlphaGo、Dota 2）、机器人、自动驾驶和资源优化方面取得了显著成功。关键算法包括 Q-Learning、SARSA、策略梯度和 Actor-Critic 方法。本演示在网格世界中可视化 Q-Learning：智能体学习从起点导航到目标，同时避开陷阱。观察智能体起初随机探索，然后随着 Q 值（状态-动作值）通过经验更新，逐渐收敛到最优路径。"
+      },
+      "demoScript": "demos/reinforcement-learning-gridworld.js"
+    }
+  ]
+}

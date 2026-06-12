@@ -1,0 +1,113 @@
+{
+  "title": {
+    "en": "Skills",
+    "zh": "专业技能"
+  },
+  "sections": [
+    {
+      "title": {
+        "en": "Technical Skills",
+        "zh": "技术技能"
+      },
+      "categories": [
+        {
+          "name": {
+            "en": "Programming Languages",
+            "zh": "编程语言"
+          },
+          "skills": [
+            {
+              "name": "Python",
+              "description": {
+                "en": "Used for data analysis, machine learning, and backend development in various projects.",
+                "zh": "用于各种项目的数据分析、机器学习和后端开发。"
+              }
+            },
+            {
+              "name": "JavaScript",
+              "description": {
+                "en": "Used for web development, creating interactive user interfaces.",
+                "zh": "用于Web开发，创建交互式用户界面。"
+              }
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Tools & Frameworks",
+            "zh": "工具和框架"
+          },
+          "skills": [
+            {
+              "name": "TensorFlow / PyTorch",
+              "description": {
+                "en": "Deep learning frameworks used in research and projects.",
+                "zh": "研究和项目中使用的深度学习框架。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "PhD Research Skills",
+        "zh": "博士研究技能"
+      },
+      "items": [
+        {
+          "en": "Research methodology and experimental design",
+          "zh": "研究方法和实验设计"
+        },
+        {
+          "en": "Paper writing and publication",
+          "zh": "论文撰写和发表"
+        },
+        {
+          "en": "Data analysis and visualization",
+          "zh": "数据分析和可视化"
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Master Learnt Courses",
+        "zh": "硕士课程"
+      },
+      "items": [
+        {
+          "en": "Advanced Algorithms",
+          "zh": "高级算法"
+        },
+        {
+          "en": "Machine Learning",
+          "zh": "机器学习"
+        },
+        {
+          "en": "Computer Vision",
+          "zh": "计算机视觉"
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Undergraduate Learnt Courses",
+        "zh": "本科课程"
+      },
+      "items": [
+        {
+          "en": "Data Structures",
+          "zh": "数据结构"
+        },
+        {
+          "en": "Operating Systems",
+          "zh": "操作系统"
+        },
+        {
+          "en": "Database Systems",
+          "zh": "数据库系统"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "title": {
+    "en": "Publications",
+    "zh": "发表文章"
+  },
+  "publications": [
+    {
+      "title": {
+        "en": "High-Fidelity Road Network Generation with Latent Diffusion Models",
+        "zh": "High-Fidelity Road Network Generation with Latent Diffusion Models"
+      },
+      "url": "https://doi.org/10.24963/ijcai.2025/702",
+      "meta": {
+        "en": "IJCAI | 2025",
+        "zh": "IJCAI | 2025"
+      },
+      "image": "content/GraphWalker_1.png",
+      "abstract": {
+        "en": "Road networks are the vein of modern cities. Yet, maintaining up-to-date and accurate road network information is a persistent challenge, especially in areas with rapid urban changes or limited surveying resources. Crowdsourced trajectories, e.g., from GPS records collected by mobile devices and vehicles, have emerged as a powerful data source for continuously mapping the urban areas. However, the inherent noise, irregular and often sparse sampling rates, and the vast variability in movement patterns make the problem of road network generation from trajectories a non-trivial task. Existing methods often approach this from an appearance-based perspective: they typically render trajectories as 2D density maps and then employ heuristic algorithms to extract road networks - leading to inevitable information loss and thus poor performance especially when trajectories are sparse or ambiguities present, e.g. flyovers. In this paper, we propose a novel approach, called GraphWalker, to generate high-fidelity road network graphs from raw trajectories in an end-to-end manner. We achieve this by designing a bespoke latent diffusion transformer T2W-DiT, which treats input trajectories as generation conditions, and gradually denoises samples from a latent space to obtain the corresponding walks on the underlying road network graph - then assemble them together as the final road network. Extensive experiments on multiple datasets demonstrate the proposed GraphWalker can effectively generate high quality road networks from noisy and sparse trajectories, showcasing significant improvements over state-of-the-art.",
+        "zh": "道路网络如同现代城市的血脉，但持续维护最新且准确的道路网络信息始终是一项挑战，尤其是在城市快速扩张或测绘资源有限的地区。近年来，众包轨迹数据（如移动设备和车辆采集的 GPS 轨迹）逐渐成为持续感知和更新城市道路网络的重要数据来源。然而，这类轨迹数据普遍存在噪声较大、采样频率不规则且往往较低，以及出行模式差异显著等问题，使得基于轨迹数据构建道路网络并非易事。现有方法大多从“图像表示”的角度出发，通常先将轨迹渲染为二维密度图，再利用启发式算法提取道路网络。这一过程不可避免地会造成信息损失，因此在轨迹稀疏或存在复杂道路结构（如立交桥）等情况下，往往难以获得理想效果。为此，本文提出了一种名为 GraphWalker 的新方法，能够以端到端的方式直接从原始轨迹数据生成高保真的道路网络图。具体而言，我们设计了一种专门的潜空间扩散 Transformer——T2W-DiT，将输入轨迹作为生成条件，通过在潜空间中逐步去噪，生成对应于真实道路网络上的行走路径（walks），并进一步将这些路径组装为最终的道路网络。在多个数据集上的大量实验表明，GraphWalker 能够从噪声较大且采样稀疏的轨迹数据中有效生成高质量道路网络，相比现有最先进方法取得了显著性能提升。"
+      }
+    },
+    {
+      "title": {
+        "en": "Road Network Generation From Noisy Trajectories With Graph Latent Diffusion Models",
+        "zh": "Road Network Generation From Noisy Trajectories With Graph Latent Diffusion Models"
+      },
+      "url": "https://doi.org/10.1109/TITS.2026.3673198",
+      "meta": {
+        "en": "IEEE T-ITS | 2026",
+        "zh": "IEEE T-ITS | 2026"
+      },
+      "image": "content/GraphWalker_2.png",
+      "abstract": {
+        "en": "Modern navigation systems and logistics services rely heavily on digital road networks, which can be accurately constructed from crowd-sourced GPS trajectories. Yet, most existing trajectory-based road network generators project GPS coordinates to 2D grid, followed by semantic segmentation to obtain road heatmap, and further processed to road network graph via heuristic processing. The data through this pipeline involve multiple cross-modal heuristic conversions, which cause serious information loss and harm overall robustness. In this paper, we propose a novel end-to-end learnable deep learning approach, named GraphWalker, to generate accurate road network graphs directly from raw trajectories with minimal information loss. In particular, GraphWalker is a latent diffusion model (LDM) consisting of two key components: the Trajectory-to-Walks Diffusion Transformer (T2W-DiT) generates walks with trajectories as conditions, and the Walks-to-Graph Variational Auto-Encoder (W2G-VAE) reconstructs road network graphs from walks. GraphWalker keeps the data in geographical space throughout the pipeline to retain all information within raw trajectories. Additionally, the end-to-end learnable design removes the heuristic processing and enhances the robustness and generalizability. Extensive experiments on multiple datasets demonstrate that the proposed GraphWalker can effectively generate high-quality road networks from noisy and sparse trajectories, showcasing significant improvements of up to 55.43% over state-of-the-art.",
+        "zh": "现代导航系统和物流服务高度依赖数字化道路网络，而众包 GPS 轨迹为高精度道路网络构建提供了重要的数据基础。然而，现有大多数基于轨迹的道路网络生成方法通常先将 GPS 坐标投影到二维栅格空间，通过语义分割生成道路热力图，再利用启发式后处理将其转换为道路网络图。由于这一流程涉及多次跨模态的数据转换，不可避免地会造成信息损失，从而影响模型的整体鲁棒性和生成质量。针对这一问题，本文提出了一种名为 GraphWalker 的端到端可学习深度学习框架，能够直接从原始轨迹数据生成高精度道路网络图，并最大限度地保留轨迹中的信息。具体而言，GraphWalker 是一种潜空间扩散模型（Latent Diffusion Model, LDM），由两个核心模块组成：Trajectory-to-Walks Diffusion Transformer（T2W-DiT）以轨迹作为条件生成道路行走路径（walks）；Walks-to-Graph Variational Auto-Encoder（W2G-VAE）则根据生成的 walks 重建完整的道路网络图。与现有方法不同，GraphWalker 在整个生成流程中始终保持数据处于地理空间（geographical space），避免了因中间表示转换带来的信息损失，从而充分保留原始轨迹中的空间信息。同时，其端到端可学习的设计消除了对启发式后处理的依赖，进一步提升了模型的鲁棒性和泛化能力。在多个真实数据集上的大量实验表明，GraphWalker 能够从噪声较大且采样稀疏的轨迹数据中有效生成高质量道路网络，相较于现有最先进方法，性能最高可提升 55.43%。"
+      }
+    },
+    {
+      "title": {
+        "en": "TRACE: Trajectory Recovery with State Propagation Diffusion for Urban Mobility",
+        "zh": "TRACE: Trajectory Recovery with State Propagation Diffusion for Urban Mobility"
+      },
+      "url": "https://doi.org/10.1145/3774904.3792461",
+      "meta": {
+        "en": "ACM TIST | 2026",
+        "zh": "ACM TIST | 2026"
+      },
+      "image": "content/TRACE.png",
+      "abstract": {
+        "en": "High-quality GPS trajectories are essential for location-based web services and smart city applications, including navigation, ride-sharing and delivery. However, due to low sampling rates and limited infrastructure coverage during data collection, real-world trajectories are often sparse and feature unevenly distributed location points. Recovering these trajectories into dense and continuous forms is essential but challenging, given their complex and irregular spatio-temporal patterns. In this paper, we introduce a novel diffusion model for TRA jectory rEC overy named TRACE, which reconstruct dense and continuous trajectories from sparse and incomplete inputs. At the core of TRACE, we propose a State Propagation Diffusion Model (SPDM), which integrates a novel memory mechanism, so that during the denoising process, TRACE can retain and leverage intermediate results from previous steps to effectively reconstruct those hard-to-recover trajectory segments. Extensive experiments on multiple real-world datasets show that TRACE outperforms the state-of-the-art, offering >26% accuracy improvement without significant inference overhead. Our work strengthens the foundation for mobile and web-connected location services, advancing the quality and fairness of data-driven urban applications. Code is available at:~ https://github.com/JinmingWang/TRACE",
+        "zh": "高质量 GPS 轨迹是导航、网约车、即时配送等位置服务以及智慧城市应用的重要基础。然而，在实际数据采集过程中，受限于较低的采样频率和不完善的基础设施覆盖，真实轨迹往往十分稀疏，且定位点分布不均匀。如何将这类稀疏、不完整的轨迹恢复为稠密且连续的轨迹，对于提升下游应用性能至关重要，但由于轨迹蕴含复杂且不规则的时空模式，这一任务仍面临诸多挑战。本文提出了一种用于轨迹恢复（TRAjectory RECovery）的新型扩散模型 TRACE，能够从稀疏且缺失严重的输入轨迹中重建稠密、连续的运动轨迹。TRACE 的核心是我们设计的 State Propagation Diffusion Model（SPDM）。该模型引入了一种新的记忆机制，使其在扩散模型逐步去噪的过程中，能够保留并利用前序步骤产生的中间状态，从而更有效地恢复那些难以重建的轨迹片段。在多个真实世界数据集上的大量实验表明，TRACE 的性能显著优于现有最先进方法，在几乎不增加推理开销的情况下，实现了超过 26% 的精度提升。该工作进一步夯实了移动互联网和位置服务系统的数据基础，为提升数据驱动城市应用的服务质量与公平性提供了有力支撑。"
+      }
+    }
+  ]
+}

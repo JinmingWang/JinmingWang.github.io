@@ -3,43 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - AI Researcher</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Personal Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 容器 #1 顶部区域 -->
-    <header class="header-container">
-        <h1 class="name">Jinming Wang</h1>
-        <p class="tagline">Researcher in Deep Learning and Urban Computing</p>
-        <div class="contact-links">
-            <i class="fa-solid fa-envelope"></i>
-            <a href="jw1294@exeter.ac.uk" zIndex="2" class="email-link">jw1294@exeter.ac.uk</a>
-            <i class="fa-brands fa-square-github"></i>
-            <a href="https://github.com/JinmingWang" zIndex="2" class="github-link">GitHub</a>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile-section" id="profile-section">
+            <!-- Profile will be loaded dynamically -->
         </div>
-    </header>
-
-    <div class="divider"></div>
-
-    <!-- 容器 #2 神经网络区域 -->
-    <main class="network-container" id="networkContainer">
-        <canvas id="connectionCanvas" zIndex="-2"></canvas> <!-- 用于绘制连接线 -->
-        <div class="layers-container" id="layersContainer"></div>
         
-        <!-- 内容展示层 -->
-        <div class="content-overlay" id="contentOverlay">
-            <div class="content-card" id="contentCard">
-                <h2 id="contentTitle"></h2>
-                <p id="contentBody"></p>
-            </div>
+        <div class="language-selector">
+            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="zh">中文</button>
         </div>
+        
+        <nav class="nav-menu">
+            <a href="#about" class="nav-block nav-about" data-chapter="about">
+                <span data-en="About Me" data-zh="自我介绍">About Me</span>
+            </a>
+            <a href="#experiences" class="nav-block nav-experiences" data-chapter="experiences">
+                <span data-en="Experiences" data-zh="个人经历">Experiences</span>
+            </a>
+            <a href="#demos" class="nav-block nav-skills" data-chapter="demos">
+                <span data-en="Demos" data-zh="技术演示">Demos</span>
+            </a>
+            <a href="#publications" class="nav-block nav-publications" data-chapter="publications">
+                <span data-en="Publications" data-zh="发表文章">Publications</span>
+            </a>
+            <a href="#contact" class="nav-block nav-contact" data-chapter="contact">
+                <span data-en="Contact & More" data-zh="联系方式">Contact & More</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Content will be loaded dynamically -->
+        <section id="about" class="chapter active"></section>
+        <section id="experiences" class="chapter"></section>
+        <section id="demos" class="chapter"></section>
+        <section id="publications" class="chapter"></section>
+        <section id="contact" class="chapter"></section>
     </main>
 
-    <div class="tooltip" id="tooltip"></div>
-    <script src="data.js"></script>
     <script src="script.js"></script>
-    <!-- https://gitcode.com/gh_mirrors/ca/canvas-nest.js?utm_source=highlight_word_gitcode&word=canvas-nest.js -->
-    <script color="255,255,255" opacity="1" count="100" zIndex="0", src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

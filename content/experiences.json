@@ -1,0 +1,264 @@
+{
+  "title": {
+    "en": "Experiences",
+    "zh": "个人经历"
+  },
+  "sections": [
+    {
+      "title": {
+        "en": "Education",
+        "zh": "教育背景"
+      },
+      "items": [
+        {
+          "title": {
+            "en": "PhD in Computer Science",
+            "zh": "计算机科学博士"
+          },
+          "meta": {
+            "en": "University of Exeter, UK | 2023 - 2027",
+            "zh": "埃克塞特大学，英国 | 2023 - 2027"
+          },
+          "description": {
+            "en": "Generative AI in Urban Computing.",
+            "zh": "城市计算中的生成式人工智能。"
+          }
+        },
+        {
+          "title": {
+            "en": "Master's Degree in Advanced Computer Science",
+            "zh": "高级计算机科学硕士"
+          },
+          "meta": {
+            "en": "University of Exeter, UK | 2022 - 2023",
+            "zh": "埃克塞特大学，英国 | 2022 - 2023"
+          },
+          "description": {
+            "en": "Distinction.",
+            "zh": "优异成绩（最优）。"
+          }
+        },
+        {
+          "title": {
+            "en": "Bachelor's Degree in Computer Science",
+            "zh": "计算机科学学士"
+          },
+          "meta": {
+            "en": "University of Alberta, Canada | 2017 - 2021",
+            "zh": "阿尔伯塔大学，加拿大 | 2017 - 2021"
+          },
+          "description": {
+            "en": "Specialization in Computer Science, top 20%.",
+            "zh": "计算机科学专业，排名前20%。"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Work Experience",
+        "zh": "工作经验"
+      },
+      "items": [
+        {
+          "title": {
+            "en": "Computer Vision AI Algorithm Engineer",
+            "zh": "计算机视觉AI算法工程师"
+          },
+          "meta": {
+            "en": "Beijing Kanbig Technology Co., Ltd | 2021 - 2022",
+            "zh": "北京荟诚科技有限公司 | 2021 - 2022"
+          },
+          "description": {
+            "en": "From solution design to implementation, I completed several projects.",
+            "zh": "从方案到实现，再到落地完成数个项目。"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Projects",
+        "zh": "项目"
+      },
+      "projects": [
+        {
+          "title": {
+            "en": "GPS Trajectory Recovery, Generation and Prediction Foundation Model",
+            "zh": "GPS轨迹恢复，生成与预测基础模型"
+          },
+          "meta": {
+            "en": "PhD Research Project | 2024 - 2026",
+            "zh": "博士科研项目 | 2024 - 2026"
+          },
+          "description": {
+            "en": "Mobile trajectories are critical data in smart cities, consisting of spatiotemporal sequences of GPS coordinates used in navigation, logistics, and urban planning. This project developed a probabilistic diffusion model with three key advantages: 1) simultaneous capabilities for trajectory recovery, interpolation, generation, and prediction; 2) ability to accept diverse contextual condition data; 3) high robustness to frequent changes in condition data formats and incomplete condition data.",
+            "zh": "移动轨迹是智慧城市中重要的数据之一，它是由一系列卫星定位的经纬度坐标组成的时空序列数据，并在导航，物流，城建中起到关键作用。本项目构建了一种概率扩散模型，其拥有三大优点：1)同时具备轨迹恢复，轨迹插值，轨迹生成，轨迹预测等多种能力；2) 可以接收多种多样的上下文条件数据；3) 对上下文条件数据的格式频繁变化，以及条件数据不完整的情况具有很高的抗性。"
+          },
+          "contributions": {
+            "en": "I unified multiple trajectory tasks as 'conditional trajectory generation based on known segments' and designed unique neural network inputs to capture arbitrary combinations of observations and queries. I built a probabilistic diffusion model combining Transformer and UNet 1D architectures. To ensure scalability with changing context formats and robustness with incomplete data, I developed SPDM (State Propagation Diffusion Model), introducing a continuously evolving hidden state connected via GRU across denoising steps. Conditional data is injected through Cross-Attention, enabling: 1) gradual recovery of missing conditions during denoising; 2) information transfer between denoising steps for higher parameter efficiency; 3) retraining only GRU and Cross-Attention modules when condition formats change.",
+            "zh": "本项目中，我首先将多种轨迹任务统一定义为基于已知片段的条件轨迹生成任务，并构建了独特的神经网络输入，使得模型可以捕捉到已知片段(observation)和查询片段(query)的任意组合。随后，我搭建了融合Transformer以及UNet 1D的概率扩散模型来生成query。在此之上，为了保证在上下文条件数据格式频繁变化时模型的可拓展性，以及条件数据不完整的情况下模型的健壮性，我改良了传统的扩散模型去噪流程，并提出了SPDM (State Propagation Diffusion Model)。具体来说，我在去噪流程中加入了一个可以不断传播和进化的隐含状态，并使用GRU链接多个去噪步骤，用于更新此隐含状态。各种条件数据通过Cross-Attention被注入到隐含状态中，在去噪过程中对生成结果产生影响。这种做法有三大优势：1) 允许模型在去噪过程中逐步恢复或适应缺损的条件数据；2) 允许不同去噪步之间的信息传递，大大提高参数效率; 3) 在条件数据格式更新时只需要重新训练GRU和Cross-Attention模块即可，不必全模型重训或微调。"
+          },
+          "outcomes": {
+            "en": "The method outperforms existing models across multiple tasks. The hidden state propagation module can be plug-and-play integrated into any multi-step denoising diffusion model for performance improvements. See PhD thesis section for publications.",
+            "zh": "在多个任务上，本方法均优于目前已有的模型。其中隐含状态传递模块可以用于任何多步去噪的扩散模型，实现即插即用的性能提升。论文请见下文博士论文部分。"
+          }
+        },
+        {
+          "title": {
+            "en": "Road Network Graph Generation with Latent Diffusion Model",
+            "zh": "基于隐空间扩散模型的路网图生成"
+          },
+          "meta": {
+            "en": "PhD Research Project | 2025 - 2026",
+            "zh": "博士科研项目 | 2025 - 2026"
+          },
+          "description": {
+            "en": "With expanding cities and increasingly 3D-complex road networks, accurate road network data is crucial for navigation, urban planning, and logistics. Traditional road generation algorithms treat cities as 2D planes using pixels, then extract graph data with heuristic algorithms. This cannot accurately model 3D structures (overpasses, tunnels) and loses information during pixelization. This project proposes a graph generation model that converts trajectories to road network graphs directly in GPS coordinate space, bypassing pixelization information loss and naturally supporting 3D structures for end-to-end modeling.",
+            "zh": "在城市不断扩张，路网趋于3D化和复杂化的今天，拥有和现实高度一致的路网数据对导航，城建和物流至关重要。然而目前路网生成算法，无论是基于轨迹的还是基于卫星图像的，均将城市视作2维平面，并使用像素来容纳平面信息。在得到2维路网热图后，再用启发式算法提取图数据。这既不能准确建模3D的路网结构(如立交桥，隧道)，又会在轨迹数据像素化的过程中损失信息。本项目提出了一种图生成模型，其在经纬度空间完成从轨迹到路网图的转化，绕过像素化造成的信息丢失。同时图数据天然支持3D结构，使得我们可以搭建端到端的模型，避免难以控制的后处理步骤。"
+          },
+          "contributions": {
+            "en": "I defined trajectory data as noisy walks along road networks. Generating graphs from trajectories involves: 1) denoising trajectories to obtain walks, 2) aggregating walks into graphs with redundant edges, 3) edge deduplication. I trained a 'Trajectories to Walks VAE' and a 'Walks to Graph Diffusion Transformer', combining them into GraphWalker, a Latent Diffusion Model.",
+            "zh": "本项目中，我首先将轨迹数据定义为具有噪声的，沿着路网行进的Walk – 在图论中，Walk是特定图中一系列首尾相接的边。那么根据轨迹生成图就是先将许多轨迹先去噪，得到一系列Walk，然后再将Walk叠加起来，形成又冗余边的图，最后进行边去重，得到最终Walk。具体来讲，我分别训练了Trajectories to Walks VAE以及Walks to Graph Diffusion Transformer，两者组合得到名为GraphWalker的Latent Diffusion Model。"
+          },
+          "outcomes": {
+            "en": "GraphWalker successfully handles 3D road networks that traditional methods cannot process. Due to its GPS coordinate space processing, it achieves theoretical floating-point precision rather than being limited by image resolution like traditional methods. See PhD thesis section for publications.",
+            "zh": "GraphWalker能够解决传统路网生成方法无法处理的3D路网。由于其在经纬度空间处理数据的特性，它的理论粒度为浮点数精度，而非像传统方法一样由图像分辨率定义。论文请见下文博士论文部分。"
+          }
+        },
+        {
+          "title": {
+            "en": "End-to-End Autonomous Driving in CARLA Simulator with RL and IL",
+            "zh": "在CARLA模拟器中使用RL和IL实现端到端自动驾驶"
+          },
+          "meta": {
+            "en": "University of Exeter Master's Project | 2024",
+            "zh": "埃克塞特大学硕士项目 | 2024"
+          },
+          "description": {
+            "en": "Developed autonomous driving algorithms in CARLA simulator using a combination of Reinforcement Learning and Imitation Learning to accelerate training. The algorithm performs environment recognition based on LiDAR data and ultimately achieves path planning.",
+            "zh": "使用CARLA模拟器开发自动驾驶算法，使用了结合Reinforcement Learning和Imitation Learning的算法来加速训练。算法基于激光雷达数据实现对周围环境的识别，并最终进行路径规划。"
+          },
+          "contributions": {
+            "en": "I prepared multiple test scenarios, personally provided operational data for Imitation Learning, and built an autonomous driving learning system from scratch by combining self-exploration Deep RL (A2C) algorithms.",
+            "zh": "我准备了多个测试场景，亲自提供了操作数据用于Imitation Learning，并结合自主探索的Deep RL (A2C)算法，从无到有搭建了一个自动驾驶学习系统。"
+          },
+          "outcomes": {
+            "en": "The final neural network is lightweight, capable of planning future paths and avoiding obstacles. With just one day of training, the agent achieves good driving behavior.",
+            "zh": "最终的神经网络非常轻量级，可以做到对未来一段时间的路径进行规划，并躲避障碍。只需要一天的训练，智能体就可以拥有不错的驾驶行为。"
+          }
+        },
+        {
+          "title": {
+            "en": "Multi-Agent LLM Continuous Workflow",
+            "zh": "多智能体LLM Agent持续工作流"
+          },
+          "meta": {
+            "en": "Personal Project | 2026",
+            "zh": "个人项目 | 2026"
+          },
+          "description": {
+            "en": "To enable parallel and continuous work, I developed a multi-agent collaborative workflow based on OpenClaw for project development.",
+            "zh": "为了能够并行工作，持续工作，基于OpenClaw开发多智能体协作的工作流，用于项目开发。"
+          },
+          "contributions": {
+            "en": "I configured 3 agents: Manager (project rhythm, planning, task assignment, plan adjustments, ensuring continuous progress), Engineer (code development and feature implementation), and Reviewer (system review, feedback, report submission). I designed the entire workflow, completed relevant Skills, customized prompting for each agent, implemented code for managing project flow and sending prompts at specific nodes, planned the agent memory system, and tested on several research projects.",
+            "zh": "我设定了3个Agent，分别为Manager，Engineer和Reviewer。其中Manager负责把控项目整体的节奏，规划，任务发布，计划变更，以及确保项目持续进行；Engineer主要负责代码开发和功能实现；Reviewer负责系统审核，反馈，提交报告。我设计了整个工作流，完成了相关的Skill，给每一个Agent定制了prompting，完成了用于管理项目流程，并在特定节点发送prompt的代码，规划好了Agent的记忆系统，并在几个科研项目上进行了测试。"
+          },
+          "outcomes": {
+            "en": "The multi-agent system produces more satisfactory results than single-agent development, approaching manual vibe coding quality. The system runs continuously until all tasks are completed. While detailed initial project planning still requires time investment, it saves significant time compared to manual coding.",
+            "zh": "最终的效果比起单Agent开发更加令人满意，结果与人工Vibe Coding相近。系统能够持续运行直到所有事项全部完成。虽然最开始的项目计划仍然需要非常细致，因此得花些时间，但比起人工Vibe Coding要省下大量的时间。"
+          }
+        },
+        {
+          "title": {
+            "en": "Personal Deep Learning Training and Experimentation Framework",
+            "zh": "个人深度学习训练及实验框架"
+          },
+          "meta": {
+            "en": "Personal Project | 2026",
+            "zh": "个人项目 | 2026"
+          },
+          "description": {
+            "en": "To simplify the workflow from idea to implementation and facilitate research experiments, I developed a PyTorch-based framework for more convenient dataset definition, model construction, training parameter adjustment, and large-scale experimentation.",
+            "zh": "为了简化从想法到实现的流程，并方便进行科研实验，我开发了一个基于PyTorch的框架，用于更方便快捷地进行数据集定义、模型搭建、训练参数调整、大量的实验。"
+          },
+          "contributions": {
+            "en": "The framework code is in JimmyTorch. It enables easy implementation of dataset classes providing diverse data types, combining with torch lightning-style model definitions, supporting torch.compile and mixed precision training. The training code has extremely high reusability. I also provided a SKILL to enable LLM Agents to easily use this framework.",
+            "zh": "该框架的代码在<a href='https://github.com/JinmingWang/JimmyTorch' target='_blank'>JimmyTorch</a>。使用它，我可以很轻松地实现能够提供非常多种数据的数据集类，结合类似torch lightening的模型定义，支持torch.compile和混合精度训练。训练部分的代码具有极高的复用性。我还提供了一个SKILL，用于让LLM Agents也能轻松地使用这个框架。"
+          },
+          "outcomes": {
+            "en": "3-4 of my research projects all use this framework, proving its versatility and convenience.",
+            "zh": "我的3到4个科研项目均使用了该框架，这证明了该框架的泛用性以及便利性。"
+          }
+        },
+        {
+          "title": {
+            "en": "Gas Station License Plate Detection and Parking Space Tracking",
+            "zh": "加油站车牌检测与车位追踪"
+          },
+          "meta": {
+            "en": "Beijing Kanbig Technology Co., Ltd | 2021 - 2022",
+            "zh": "北京荟诚科技有限公司 | 2021 - 2022"
+          },
+          "description": {
+            "en": "Through cameras installed on gas station canopies, the system identifies vehicles entering gas stations and their license plates, continuously tracks vehicles to detect which parking spot they occupy for refueling, and detects when vehicles leave. Challenges include frequent license plate occlusion, diverse plate styles, plate-vehicle matching and continuous tracking, and long-distance detection of plates with perspective distortion.",
+            "zh": "通过安装在加油站顶棚的摄像头，识别到进入加油站的车辆以及车牌号。随后对该车辆进行持续追踪，检测到其停在哪一个车位上进行加油，最终检测到车辆离开加油站。项目难点在于车牌频繁遮挡，车牌样式较多，车牌与车辆的匹配与持续追踪，远距离检测和识别带有透视变换的车牌。"
+          },
+          "contributions": {
+            "en": "I trained YoloV5, Retina Net, Spatial Transformer Network and custom license plate recognition networks for vehicle detection, plate detection, plate correction, and plate recognition. To increase data volume and improve performance, I developed an image algorithm-based license plate generator and used various image transformations combined with CycleGAN for data augmentation and simulation. To deploy on Android phones, I used depth-wise separable convolution to reduce YoloV5 memory requirements and lightweight ByteTrack instead of DeepSort for tracking.",
+            "zh": "我训练了YoloV5，Retina Net，Spatial Transformer Network以及自己构建的车牌识别神经网络，进行车辆检测，车牌检测，车牌矫正，车牌识别。为了增加数据量，提升效果，我开发了基于图像算法的车牌生成器，并使用多种图像变换，结合CycleGAN进行数据增强与仿真。为了让系统可以部署到安卓手机上运行，我使用深度可分离卷积降低YoloV5的显存需求，并使用轻量级的ByteTrack而非DeepSort进行目标追踪。"
+          },
+          "outcomes": {
+            "en": "License plate recognition accuracy reached 98-99%. Overall system accuracy reached 91%, with 9% failures due to plates outside camera view, folding plates, occluded plates, and dust-covered plates. Achieved 30 FPS on Android phones.",
+            "zh": "车牌识别的准确率达到98%到99%。整套系统的准确率可达91%，有9%的失败是由于车牌不在摄像头视野中、折叠车牌、被遮挡车牌和被灰尘覆盖的车牌。在安卓手机上能达到30 FPS的速度。"
+          }
+        },
+        {
+          "title": {
+            "en": "Steel Billet Counting and ID Recognition",
+            "zh": "钢厂钢坯计数与编号识别"
+          },
+          "meta": {
+            "en": "Beijing Kanbig Technology Co., Ltd | 2022",
+            "zh": "北京荟诚科技有限公司 | 2022"
+          },
+          "description": {
+            "en": "Through photos taken by mobile phones, the system counts steel billets and recognizes 10-character IDs (letters + numbers) written on the billets.",
+            "zh": "通过手机拍摄的钢坯照片，计算钢坯数量，以及识别10位写在钢坯上的字符（字母+数字）。"
+          },
+          "contributions": {
+            "en": "I built and trained a steel billet detector specifically for square billets, achieving nearly 100% detection rate. Then built and trained a neural network to detect text orientation on billets for rotation correction. Finally trained 10-character text recognizers.",
+            "zh": "我搭建并训练了钢坯检测器，专门检测方形的钢坯，检测率几乎达到100%。随后搭建并训练了识别钢坯上文字方向的神经网络，用于将文字旋转回正。最后训练10个字符文本识别器。"
+          },
+          "outcomes": {
+            "en": "Overall system accuracy exceeded 90%, with few errors due to overly sloppy character fonts or characters being unrecognizable due to shooting angle and distance.",
+            "zh": "整个系统的准确度在90%以上，少数错误是由于钢坯上的字符字体过于潦草，或由于拍摄角度和距离导致字符无法辨认。"
+          }
+        },
+        {
+          "title": {
+            "en": "Coal Mine Conveyor Belt Load Detection",
+            "zh": "煤矿传送带负载检测"
+          },
+          "meta": {
+            "en": "Beijing Kanbig Technology Co., Ltd | 2022",
+            "zh": "北京荟诚科技有限公司 | 2022"
+          },
+          "description": {
+            "en": "Through cameras mounted above conveyor belts, the system detects coal mine conveyor belt load (percentage of belt width occupied by coal), detects foreign objects mixed in coal (such as wooden stakes, wire mesh, gangue), and detects whether the coal mine conveyor belt is running.",
+            "zh": "通过假设在传送带上方的摄像头检测煤矿传送带的负载（煤矿占传送带宽度的百分比），检测煤矿中是否混有异物（如木桩，铁丝网，矸石），检测煤矿传送带是否正在运行中。"
+          },
+          "contributions": {
+            "en": "I designed and trained a new segmentation neural network inspired by U-Net and Deeplab v3+. The network is very lightweight with fast inference speed. I designed a finite state machine and image difference-based neural network to help identify conveyor belt operating status.",
+            "zh": "我设计并训练了新的分割神经网络，其灵感来源于U-Net与Deeplib v3+。该神经网络非常轻量级，推理速度快。我设计了一个有限状态机和基于图像差分的神经网络来帮助识别煤矿传送带的运行状态。"
+          },
+          "outcomes": {
+            "en": "The system was deployed in mines in Inner Mongolia, Shaanxi, and Shanxi in 2022. A single Nvidia GTX 1650 GPU can support continuous detection of 10 camera feeds at 20 FPS.",
+            "zh": "该系统在2022年正在被某些内蒙古，陕西，山西的矿场使用。只需要一个Nvidia GTX 1650 GPU就可以支持10路摄像头，20FPS的持续检测。"
+          }
+        }
+      ]
+    }
+  ]
+}

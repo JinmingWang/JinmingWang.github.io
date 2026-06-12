@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Contact & More",
+    "zh": "联系方式"
+  },
+  "email 1": "13106C1@gmail.com",
+  "email 2": "jw1294@exeter.ac.uk", 
+  "email 3": "877437674@qq.com",
+  "wechat": "Jimmy13106C1",
+  "profiles": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/jinming-wang-a361353b3/"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/JinmingWang"
+    },
+    {
+      "name": "ORCID",
+      "url": "https://orcid.org/0009-0000-3314-9758"
+    }
+  ]
+}
